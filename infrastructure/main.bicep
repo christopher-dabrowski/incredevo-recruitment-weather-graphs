@@ -17,9 +17,14 @@ param infrasturcutreTenantId string = tenant().tenantId
 
 param applicationInsightsName string = '${baseName}-appi'
 param storageAccountName string = '${take(toLower(replace(replace(baseName, '-', ''), '_', '')), 24)}sa'
-param hostingPlanName string = '${baseName}-asp'
-param functionAppName string = '${baseName}-func'
 param keyVaultName string = take('${baseName}-kv', 24)
+
+param funcionHostingPlanName string = '${baseName}-func-asp'
+param functionAppName string = '${baseName}-func'
+
+param appServiceHostingPlanName string = '${baseName}-app-asp'
+param appServiceName string = '${baseName}-app'
+param appServiceHostingPlanSku object
 
 var functionWorkerRuntime = 'dotnet'
 
@@ -51,7 +56,7 @@ module functionApp './modules/azureFuncion.bicep' = {
   params: {
     location: location
     name: functionAppName
-    appServciePlanName: hostingPlanName
+    appServciePlanName: funcionHostingPlanName
   }
 }
 
@@ -61,6 +66,15 @@ module funcionAppSettings './modules/azureFuncionSettings.bicep' = {
     keyVaultName: keyVault.outputs.keyVaultName
     parentName: functionApp.outputs.azureFuncionName
     runtime: functionWorkerRuntime
+  }
+}
+
+module appServiceHostingPlan './modules/appServicePlan.bicep' = {
+  name: 'appServiceHostingPlan'
+  params: {
+    name: appServiceHostingPlanName
+    location: location
+    sku: appServiceHostingPlanSku
   }
 }
 

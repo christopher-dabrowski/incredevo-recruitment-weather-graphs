@@ -7,6 +7,15 @@
     },
     "location": {
       "value": "westeurope"
+    },
+    "appServiceHostingPlanSku": {
+      "value": {
+        "name": "F1",
+        "tier": "Free",
+        "size": "F1",
+        "family": "F",
+        "capacity": 0
+      }
     }
   }
 }
