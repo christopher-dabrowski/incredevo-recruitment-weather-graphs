@@ -27,7 +27,7 @@ param appServiceName string = '${baseName}-app'
 param appServiceHostingPlanSku object
 param ASPNETCORE_ENVIRONMENT string = 'Production'
 
-var functionWorkerRuntime = 'dotnet'
+var functionWorkerRuntime = 'dotnet-isolated'
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: storageAccountName

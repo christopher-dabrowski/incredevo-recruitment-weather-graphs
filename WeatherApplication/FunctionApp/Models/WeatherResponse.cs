@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-
-// ReSharper disable InconsistentNaming
+﻿// ReSharper disable InconsistentNaming
 #nullable disable
+
+using System.Text.Json.Serialization;
 
 namespace FunctionApp.Models;
 
@@ -46,10 +46,10 @@ public class Main
 
 public class Rain
 {
-    [JsonProperty("1h")]
+    [JsonPropertyName("1h")]
     public double? _1h { get; set; }
 
-    [JsonProperty("2h")]
+    [JsonPropertyName("2h")]
     public double? _2h { get; set; }
 }
 
