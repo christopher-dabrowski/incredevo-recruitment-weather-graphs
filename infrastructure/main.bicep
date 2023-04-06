@@ -1,6 +1,9 @@
 @description('Base name for all resources')
 param baseName string = 'fnapp${uniqueString(resourceGroup().id)}'
 
+@secure()
+param openWeatherApiKey string
+
 @description('Storage Account type')
 @allowed([
   'Standard_LRS'
@@ -105,6 +108,7 @@ module keyVault './modules/keyVault.bicep' = {
     infrasturcutreTenantId: infrasturcutreTenantId
     storageAccountName: storageAccount.name
     applicationInsightsName: applicationInsights.name
+    openWeatherApiKey: openWeatherApiKey
     readers: [ functionApp.outputs.objectId, appServcie.outputs.objectId ]
   }
 }

@@ -25,4 +25,4 @@ jobs:
           resourceGroupName: ${{ vars.AZURE_RG }}
           template: infrastructure/main.bicep
           deploymentMode: Complete
-          parameters: infrastructure/configuration/dev.parameters.json
+          parameters: infrastructure/configuration/dev.parameters.json openWeatherApiKey=${{ secrets.OPEN_WEATHER_API_KEY }}

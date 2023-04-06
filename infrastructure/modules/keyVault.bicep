@@ -7,6 +7,9 @@ param applicationInsightsName string
 
 param readers array
 
+@secure()
+param openWeatherApiKey string
+
 var accessPolicies = map(readers, readerId => {
     tenantId: infrasturcutreTenantId
     objectId: readerId
@@ -62,6 +65,14 @@ resource applicationInsightsIntrumentationKeySecret 'Microsoft.KeyVault/vaults/s
   name: 'ApplicationInsights--ConnectionString'
   properties: {
     value: applicationInsights.properties.ConnectionString
+  }
+}
+
+resource openWeatherApiKeySecret 'Microsoft.KeyVault/vaults/secrets@2022-07-01' = {
+  parent: keyVault
+  name: 'OpenWeather--ApiKey'
+  properties: {
+    value: openWeatherApiKey
   }
 }
 
