@@ -46,7 +46,6 @@ The Bicep resource and module dependencies diagram looks as follows:
 
 ![Bicep resources](./docs/bicep_modules.png)
 
-
 ### Time tracking
 
 For time tracking I'm using [Clockify](https://clockify.me/) and I'm tracking time for each task using GitHub issues.  
@@ -54,15 +53,15 @@ I'll add the final time report when I finish the task.
 
 ### CI/CD
 
-<!-- To implement an automated deployment process I've used GitHub Actions.  
+To implement an automated deployment process I've used GitHub Actions.  
 Specific actions are triggered when changes are pushed to a specific repository path or can be triggered manually.  
-Actions definitions can be found in the [.github/workflows](.github/workflows) directory. -->
+Actions definitions can be found in the [.github/workflows](.github/workflows) directory.
 
 _WIP_
 
 ### Solution showcase
 
-_WIP_
+
 
 <!-- #### GitHub Action runs
 
