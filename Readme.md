@@ -69,6 +69,14 @@ The app can be viewed on Azure <https://kd-dev-incre-weather-app.azurewebsites.n
 
 ![Current wind and temperature graphs](docs/wind_and_temp.png)
 
+#### Temperature in the last hour diagram
+
+![A temperature in the last hour diagram](docs/temperature_diagram.png)
+
+#### Wind in the last hour diagram
+
+![Wind in the last hour diagram](docs/wind_diagram.png)
+
 #### Azure resources
 
 ![Resource Group](docs/rg.png)
