@@ -1,4 +1,4 @@
-# IncreDevo recruitment task - Log API calls
+# IncreDevo recruitment task - Weather Data Application
 
 This is my attempt at solving the second recruitment task for the [IncreDevo company](https://incredevo.com/)
 
@@ -57,19 +57,23 @@ To implement an automated deployment process I've used GitHub Actions.
 Specific actions are triggered when changes are pushed to a specific repository path or can be triggered manually.  
 Actions definitions can be found in the [.github/workflows](.github/workflows) directory.
 
-_WIP_
-
 ### Solution showcase
 
+The app can be viewed on Azure <https://kd-dev-incre-weather-app.azurewebsites.net/>.
 
+#### Application in action
 
-<!-- #### GitHub Action runs
+#### Azure resources
+
+![Resource Group](docs/rg.png)
+
+#### GitHub Action runs
 
 The runs can be viewed in the [Actions repo tab](https://github.com/christopher-dabrowski/incredevo-recruitment-log-api-calls/actions)
 
 ![deploy infrastructure action runs](docs/deploy_infrastructure_action_runs.png)
 
-![deploy Azure Function runs](docs/deploy_af_runs.png) -->
+![deploy Azure Function runs](docs/deploy_af_runs.png)
 
 ### Notes
 
