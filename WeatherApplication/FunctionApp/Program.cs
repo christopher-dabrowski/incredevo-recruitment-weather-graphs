@@ -11,6 +11,7 @@ var host = new HostBuilder()
         services.AddHttpClient<IOpenWeatherHttpClient, OpenWeatherHttpClient>();
         services.AddTransient<IWeatherDataRepository, WeatherDataRepository>();
         services.AddTransient<IClock, Clock>();
+        services.AddTransient<ICityRepository, CityRepository>();
     })
     .Build();
 

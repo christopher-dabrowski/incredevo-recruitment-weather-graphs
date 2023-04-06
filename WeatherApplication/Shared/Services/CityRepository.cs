@@ -4,7 +4,7 @@ using Shared.Models;
 
 namespace Shared.Services;
 
-public class CityRepository
+public class CityRepository : ICityRepository
 {
     private readonly TableServiceClient _tableServiceClient;
     private readonly TableClient _citiesTableClient;
@@ -26,6 +26,7 @@ public class CityRepository
 
     private async Task FillCityTable(CancellationToken cancellationToken = default)
     {
+        await _citiesTableClient.CreateIfNotExistsAsync(cancellationToken);
         var initialCities = new[]
         {
             new CityInfo { PartitionKey = "Germany", Country = "Germany", Name = "Berlin", lat = "52.5170365", lon = "13.3888599"},
@@ -41,5 +42,11 @@ public class CityRepository
         };
 
         await Task.WhenAll(initialCities.Select(city => _citiesTableClient.AddEntityAsync(city, cancellationToken)).ToList());
+    }
+
+    public async Task<IEnumerable<CityInfo>> GetAllCities(CancellationToken cancellationToken = default)
+    {
+        await EnsureCityTableExists(cancellationToken);
+        return await _citiesTableClient.QueryAsync<CityInfo>().ToListAsync(cancellationToken);
     }
 }
