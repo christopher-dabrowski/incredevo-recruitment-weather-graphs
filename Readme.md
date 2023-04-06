@@ -69,11 +69,13 @@ The app can be viewed on Azure <https://kd-dev-incre-weather-app.azurewebsites.n
 
 #### GitHub Action runs
 
-The runs can be viewed in the [Actions repo tab](https://github.com/christopher-dabrowski/incredevo-recruitment-log-api-calls/actions)
+The runs can be viewed in the [Actions repo tab](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions)
 
 ![deploy infrastructure action runs](docs/deploy_infrastructure_action_runs.png)
 
 ![deploy Azure Function runs](docs/deploy_af_runs.png)
+
+![deploy App Service runs](docs/deploy_app_servcie_runs.png)
 
 ### Notes
 
