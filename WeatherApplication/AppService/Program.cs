@@ -1,7 +1,13 @@
+using functionApp.services;
+using Shared.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddTransient<IClock, Clock>();
+builder.Services.AddScoped<IWeatherDataRepository, WeatherDataRepository>();
 
 var app = builder.Build();
 
@@ -17,6 +23,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+    endpoints.MapControllers();
+});
 
 app.UseAuthorization();
 
