@@ -2,6 +2,12 @@
 
 This is my attempt at solving the second recruitment task for the [IncreDevo company](https://incredevo.com/)
 
+[![Deploy Azure infrastructure](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployInfrastructure.yml/badge.svg)](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployInfrastructure.yml)
+
+[![Deploy ASP App](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAppService.yml/badge.svg)](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAppService.yml)
+
+[![Deploy Funcion App](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAzureFuncion.yml/badge.svg)](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAzureFuncion.yml)
+
 ## Task description
 
 Must use:
