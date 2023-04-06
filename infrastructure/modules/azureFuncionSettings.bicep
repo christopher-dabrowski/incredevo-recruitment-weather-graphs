@@ -14,7 +14,7 @@ resource appServiceConfig 'Microsoft.Web/sites/config@2022-03-01' = {
     WeatherDataStorage: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=StorageAccount--ConnectionString)'
     WEBSITE_CONTENTAZUREFILECONNECTIONSTRING: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=StorageAccount--ConnectionString)'
     FUNCTIONS_EXTENSION_VERSION: '~4'
-    APPINSIGHTS_INSTRUMENTATIONKEY: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=ApplicationInsights--InstrumentationKey)'
+    APPLICATIONINSIGHTS_CONNECTION_STRING: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=ApplicationInsights--ConnectionString)'
     FUNCTIONS_WORKER_RUNTIME: runtime
     WEBSITE_CONTENTSHARE: '${toLower(parentName)}${take(uniqueString(resourceGroup().id), 8)}'
   }

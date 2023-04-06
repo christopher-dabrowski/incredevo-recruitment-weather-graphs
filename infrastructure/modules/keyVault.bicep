@@ -59,9 +59,9 @@ resource applicationInsights 'Microsoft.Insights/components@2020-02-02' existing
 
 resource applicationInsightsIntrumentationKeySecret 'Microsoft.KeyVault/vaults/secrets@2022-07-01' = {
   parent: keyVault
-  name: 'ApplicationInsights--InstrumentationKey'
+  name: 'ApplicationInsights--ConnectionString'
   properties: {
-    value: applicationInsights.properties.InstrumentationKey
+    value: applicationInsights.properties.ConnectionString
   }
 }
 
