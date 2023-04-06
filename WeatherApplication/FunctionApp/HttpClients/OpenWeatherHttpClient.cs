@@ -7,6 +7,7 @@ namespace FunctionApp.HttpClients;
 public class OpenWeatherHttpClient : IOpenWeatherHttpClient
 {
     private const string ApiVersion = "2.5";
+    private const string UnitType = "metric";
 
     private readonly HttpClient _httpClient;
     private readonly string _apiKey;
@@ -23,6 +24,6 @@ public class OpenWeatherHttpClient : IOpenWeatherHttpClient
 
     public async Task<WeatherResponse?> FetchWeatherData(string lat, string lon, CancellationToken cancellationToken)
     {
-        return await _httpClient.GetFromJsonAsync<WeatherResponse>($"/data/{ApiVersion}/weather?lat={lat}&lon={lon}&appid={_apiKey}", cancellationToken);
+        return await _httpClient.GetFromJsonAsync<WeatherResponse>($"/data/{ApiVersion}/weather?lat={lat}&lon={lon}&appid={_apiKey}&units={UnitType}", cancellationToken);
     }
 }
