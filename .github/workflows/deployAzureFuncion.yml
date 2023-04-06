@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - WeatherApplication/FunctionApp/**
+      - WeatherApplication/Shared/**
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: ./WeatherApplication/FunctionApp
