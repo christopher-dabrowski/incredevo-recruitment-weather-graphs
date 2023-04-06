@@ -46,22 +46,12 @@ resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
   }
 }
 
-resource hostingPlan 'Microsoft.Web/serverfarms@2021-03-01' = {
-  name: hostingPlanName
-  location: location
-  sku: {
-    name: 'Y1'
-    tier: 'Dynamic'
-  }
-  properties: {}
-}
-
 module functionApp './modules/azureFuncion.bicep' = {
   name: 'funcionApp'
   params: {
-    appServciePlanName: hostingPlan.name
     location: location
     name: functionAppName
+    appServciePlanName: hostingPlanName
   }
 }
 

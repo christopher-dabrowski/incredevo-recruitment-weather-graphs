@@ -3,8 +3,14 @@ param location string
 
 param appServciePlanName string
 
-resource hostingPlan 'Microsoft.Web/serverfarms@2021-03-01' existing = {
+resource hostingPlan 'Microsoft.Web/serverfarms@2021-03-01' = {
   name: appServciePlanName
+  location: location
+  sku: {
+    name: 'Y1'
+    tier: 'Dynamic'
+  }
+  properties: {}
 }
 
 resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
