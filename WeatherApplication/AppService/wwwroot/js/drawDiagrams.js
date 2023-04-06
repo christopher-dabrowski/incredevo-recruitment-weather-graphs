@@ -68,13 +68,11 @@
 
     drawPlot('temperature-diagram', 'Temperature in europe', cityTemperatures, latitudes, longitudes, function (data) {
         const cityName = data.points[0].text;
-        alert(`Temperature diagram in ${cityName} WIP`);
         location.assign(`/TemperatureDiagram?city=${cityName.split(' ')[0]}`);
     });
 
     drawPlot('wind-diagram', 'Wind speed in europe', cityWind, latitudes, longitudes, function (data) {
         const cityName = data.points[0].text;
-        alert(`Wind diagram for ${cityName} WIP`);
         location.assign(`/WindDiagram?city=${cityName.split(' ')[0]}`);
     });
 })();
