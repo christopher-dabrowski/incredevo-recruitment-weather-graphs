@@ -12,6 +12,7 @@ resource appServiceConfig 'Microsoft.Web/sites/config@2022-03-01' = {
   name: 'appsettings'
   properties: {
     // APPLICATIONINSIGHTS_CONNECTION_STRING: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=StorageAccount--ConnectionString)'
+    WeatherDataStorage: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=StorageAccount--ConnectionString)'
     ApplicationInsightsAgent_EXTENSION_VERSION: '~2'
     ASPNETCORE_ENVIRONMENT: ASPNETCORE_ENVIRONMENT
   }
