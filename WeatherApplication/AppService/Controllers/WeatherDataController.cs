@@ -37,6 +37,7 @@ public class WeatherDataController : ControllerBase
     [HttpGet("cities/{cityName}")]
     public async Task<ActionResult<IEnumerable<WeatherInfo>>> GetWeatherInCity(string cityName, CancellationToken cancellationToken)
     {
-        return (await _weatherDataRepository.GetWeatherInCity(cityName, from: DateTimeOffset.Now.AddHours(-1), cancellationToken: cancellationToken)).ToArray();
+        return (await _weatherDataRepository.GetWeatherInCity(cityName, from: DateTimeOffset.Now.AddHours(-1), cancellationToken: cancellationToken))
+            .OrderBy(cw => cw.ForecastTime).ToArray();
     }
 }

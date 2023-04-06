@@ -60,9 +60,6 @@
     const currentCitysWeatherResponse = await fetch("/api/WeatherData/currentCityWeather");
     const currentCitysWeather = await currentCitysWeatherResponse.json();
 
-    console.log(currentCitysWeather);
-
-    const cityNames = currentCitysWeather.map(c => c.rowKey);
     const latitudes = currentCitysWeather.map(c => c.lat);
     const longitudes = currentCitysWeather.map(c => c.lon);
 

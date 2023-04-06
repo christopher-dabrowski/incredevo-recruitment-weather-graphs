@@ -9,9 +9,8 @@
     const data = [
         {
             x: cityWeather.map(cw => cw.forecastTime),
-            y: cityWeather.map(cw => cw.wind),
+            y: cityWeather.map(cw => cw.windSpeed),
             type: 'scatter',
-            mode: 'markers'
         }
     ];
 

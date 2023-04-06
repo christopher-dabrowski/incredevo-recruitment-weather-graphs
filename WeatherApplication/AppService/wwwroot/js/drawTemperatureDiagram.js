@@ -4,14 +4,11 @@
     const cityWeatherRequest = await fetch(`/api/WeatherData/cities/${cityName}`);
     const cityWeather = await cityWeatherRequest.json();
 
-    console.log(cityWeather);
-
     const data = [
         {
             x: cityWeather.map(cw => cw.forecastTime),
             y: cityWeather.map(cw => cw.temperatureInCelsius),
             type: 'scatter',
-            mode: 'markers'
         }
     ];
 
