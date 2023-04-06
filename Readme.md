@@ -63,6 +63,12 @@ The app can be viewed on Azure <https://kd-dev-incre-weather-app.azurewebsites.n
 
 #### Application in action
 
+![Application demo](docs/application_demo.gif)
+
+#### Current wind and temperature graphs
+
+![Current wind and temperature graphs](docs/wind_and_temp.png)
+
 #### Azure resources
 
 ![Resource Group](docs/rg.png)
