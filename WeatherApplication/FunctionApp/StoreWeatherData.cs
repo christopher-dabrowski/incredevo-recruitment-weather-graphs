@@ -54,6 +54,6 @@ public class StoreWeatherData
             WindSpeed = weatherForecast.wind.speed
         };
 
-        await _weatherDataRepository.StoreWeatherForecast(weatherInfo, cancellationToken);
+        await _weatherDataRepository.StoreWeatherForecast(weatherInfo, city, cancellationToken);
     }
 }

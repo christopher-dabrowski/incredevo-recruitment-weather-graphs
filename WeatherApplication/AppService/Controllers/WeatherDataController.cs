@@ -28,4 +28,8 @@ public class WeatherDataController : ControllerBase
     {
         return (await _cityRepository.GetAllCities(cancellation)).ToArray();
     }
+
+    [HttpGet("currentCityWeather")]
+    public async Task<ActionResult<IEnumerable<CityCurrentWeatherInfo>>> GetCurrentCityWeather(CancellationToken cancellationToken) =>
+        (await _weatherDataRepository.GetCurrentWeatherForAllCities(cancellationToken)).ToArray();
 }
