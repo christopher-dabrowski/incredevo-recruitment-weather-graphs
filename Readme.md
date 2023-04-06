@@ -31,16 +31,15 @@ Description of my solution to the presented problem.
 
 #### IoC
 
-<!-- I've used [Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) to define IoC. The IoC approach allows me to have documented and consistent infrastructure.
+I've used [Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) to define IoC. The IoC approach allows me to have documented and consistent infrastructure.
 I've chosen Bicep technology as it's easy to run from any environment that has access to Azure.
 
 The Bicep code can be found in the [infrastructure](infrastructure) directory.
 
 The Bicep resource and module dependencies diagram looks as follows:
 
-![Bicep resources](./docs/Bicep_resources.png) -->
+![Bicep resources](./docs/bicep_modules.png)
 
-_WIP_
 
 ### Time tracking
 
