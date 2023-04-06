@@ -78,6 +78,15 @@ module appServiceHostingPlan './modules/appServicePlan.bicep' = {
   }
 }
 
+module appServcie './modules/apiAppService.bicep' = {
+  name: 'appServcie'
+  params: {
+    name: appServiceName
+    location: location
+    appServiceAppPlanNme: appServiceHostingPlan.outputs.name
+  }
+}
+
 module keyVault './modules/keyVault.bicep' = {
   name: 'keyVault'
   params: {
@@ -86,6 +95,6 @@ module keyVault './modules/keyVault.bicep' = {
     infrasturcutreTenantId: infrasturcutreTenantId
     storageAccountName: storageAccount.name
     applicationInsightsName: applicationInsights.name
-    readers: [ functionApp.outputs.objectId ]
+    readers: [ functionApp.outputs.objectId, appServcie.outputs.objectId ]
   }
 }

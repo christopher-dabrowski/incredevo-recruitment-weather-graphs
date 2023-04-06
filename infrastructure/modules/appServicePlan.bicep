@@ -8,5 +8,4 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   sku: sku
 }
 
-output id string = appServicePlan.id
 output name string = appServicePlan.name
