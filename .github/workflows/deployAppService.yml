@@ -1,0 +1,41 @@
+name: Deploy ASP App
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - WeatherApplication/AppService/**
+
+env:
+  AZURE_WEBAPP_PACKAGE_PATH: WeatherApplication/AppService
+  DOTNET_VERSION: 6.x
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: dotnet build and publish
+        run: |
+          pushd ./${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          dotnet restore
+          dotnet build --configuration Release
+          dotnet publish -c Release --property:PublishDir='./output'
+          popd
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to App Service
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
+          package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/output'
