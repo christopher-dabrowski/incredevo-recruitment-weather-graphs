@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Models;
 using Shared.Services;
+using System.Threading;
 
 namespace AppService.Controllers;
 
@@ -32,4 +33,10 @@ public class WeatherDataController : ControllerBase
     [HttpGet("currentCityWeather")]
     public async Task<ActionResult<IEnumerable<CityCurrentWeatherInfo>>> GetCurrentCityWeather(CancellationToken cancellationToken) =>
         (await _weatherDataRepository.GetCurrentWeatherForAllCities(cancellationToken)).ToArray();
+
+    [HttpGet("cities/{cityName}")]
+    public async Task<ActionResult<IEnumerable<WeatherInfo>>> GetWeatherInCity(string cityName, CancellationToken cancellationToken)
+    {
+        return (await _weatherDataRepository.GetWeatherInCity(cityName, from: DateTimeOffset.Now.AddHours(-1), cancellationToken: cancellationToken)).ToArray();
+    }
 }

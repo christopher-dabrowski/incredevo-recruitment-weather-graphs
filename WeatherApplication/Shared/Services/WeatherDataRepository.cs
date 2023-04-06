@@ -48,6 +48,16 @@ public class WeatherDataRepository : IWeatherDataRepository
             weatherInfo => weatherInfo.ForecastTime >= from && weatherInfo.ForecastTime < to, cancellationToken: cancellationToken).ToArrayAsync(cancellationToken);
     }
 
+    public async Task<IEnumerable<WeatherInfo>> GetWeatherInCity(string cityName, DateTimeOffset? from = null, DateTimeOffset? to = null,
+        CancellationToken cancellationToken = default)
+    {
+        from ??= _clock.DateTimeOffsetNow.AddHours(-1);
+        to ??= _clock.DateTimeOffsetNow;
+
+        return await _weatherDataTableClient.QueryAsync<WeatherInfo>(
+            weatherInfo => weatherInfo.City == cityName && weatherInfo.ForecastTime >= from && weatherInfo.ForecastTime < to, cancellationToken: cancellationToken).ToArrayAsync(cancellationToken);
+    }
+
     public async Task<IEnumerable<CityCurrentWeatherInfo>> GetCurrentWeatherForAllCities(
         CancellationToken cancellationToken = default) =>
         await _cityCurrentWeatherTableClient.QueryAsync<CityCurrentWeatherInfo>().ToListAsync(cancellationToken);

@@ -11,4 +11,7 @@ public interface IWeatherDataRepository
 
     Task<IEnumerable<CityCurrentWeatherInfo>> GetCurrentWeatherForAllCities(
         CancellationToken cancellationToken = default);
+
+    Task<IEnumerable<WeatherInfo>> GetWeatherInCity(string cityName, DateTimeOffset? from = null, DateTimeOffset? to = null,
+        CancellationToken cancellationToken = default);
 }

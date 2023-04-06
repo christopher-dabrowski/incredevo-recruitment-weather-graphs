@@ -1,5 +1,4 @@
 ﻿const drawPlot = (elementId, title, text, latitudes, longitudes, onClick) => {
-
     const data = [{
         type: 'scattergeo',
         mode: 'markers+text',
@@ -72,11 +71,13 @@
 
     drawPlot('temperature-diagram', 'Temperature in europe', cityTemperatures, latitudes, longitudes, function (data) {
         const cityName = data.points[0].text;
-        alert(`Temperature diagram in ${cityName} WIP`)
+        alert(`Temperature diagram in ${cityName} WIP`);
+        location.assign(`/api/WeatherData/cities/${cityName.split(' ')[0]}`);
     });
 
     drawPlot('wind-diagram', 'Wind speed in europe', cityWind, latitudes, longitudes, function (data) {
         const cityName = data.points[0].text;
-        alert(`Wind diagram for ${cityName} WIP`)
+        alert(`Wind diagram for ${cityName} WIP`);
+        location.assign(`/api/WeatherData/cities/${cityName.split(' ')[0]}`);
     });
 })();
