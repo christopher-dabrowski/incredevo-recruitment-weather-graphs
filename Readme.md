@@ -81,6 +81,10 @@ The app can be viewed on Azure <https://kd-dev-incre-weather-app.azurewebsites.n
 
 ![Resource Group](docs/rg.png)
 
+#### Storage account content
+
+![Storage account content](docs/storage_account_contnet.png)
+
 #### GitHub Action runs
 
 The runs can be viewed in the [Actions repo tab](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions)
