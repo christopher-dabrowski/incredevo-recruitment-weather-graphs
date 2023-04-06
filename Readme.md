@@ -27,7 +27,7 @@ Description of my solution to the presented problem.
 
 ### Architecture
 
-<!-- ![Architecture diagram](docs/Architecture.drawio.png) -->
+![Architecture diagram](docs/Architecture.drawio.png)
 
 #### IoC
 
@@ -71,4 +71,4 @@ The runs can be viewed in the [Actions repo tab](https://github.com/christopher-
 
 Noteworthy decisions and aspects of the implementation and project configuration or work methodology.
 
-_WIP_
+- I've decided to use Azure Table Storage for the database, as I don't need to model relations between entities and Table Storage is significantly cheaper than a SQL database
