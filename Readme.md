@@ -51,6 +51,22 @@ The Bicep resource and module dependencies diagram looks as follows:
 For time tracking I'm using [Clockify](https://clockify.me/) and I'm tracking time for each task using GitHub issues.  
 I'll add the final time report when I finish the task.
 
+Total time spent on project: 08:38:13
+
+Time breakdown per task in completion order:  
+_format: \#{gh-issue} {name} - {time spent}_
+
+- #1 Repo setup - 00:11:22
+- #2 Describe tasks - 00:06:13
+- #8 Explore API - 00:36:17
+- #4 IoC - 00:20:16
+- #5 CI/CD for IoC - 00:27:21
+- #6 Scaffold ASP project - 00:05:00
+- #13 CI/CD for Azure Funcion - 00:33:47
+- #10 Setup data fetching - 02:21:32
+- #12 Display weather trends graphs - 03:15:30
+- #15 Describe the solution - 00:40:55
+
 ### CI/CD
 
 To implement an automated deployment process I've used GitHub Actions.  
