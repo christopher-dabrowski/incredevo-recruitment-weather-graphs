@@ -25,6 +25,7 @@ param functionAppName string = '${baseName}-func'
 param appServiceHostingPlanName string = '${baseName}-app-asp'
 param appServiceName string = '${baseName}-app'
 param appServiceHostingPlanSku object
+param ASPNETCORE_ENVIRONMENT string = 'Production'
 
 var functionWorkerRuntime = 'dotnet'
 
@@ -84,6 +85,15 @@ module appServcie './modules/apiAppService.bicep' = {
     name: appServiceName
     location: location
     appServiceAppPlanNme: appServiceHostingPlan.outputs.name
+  }
+}
+
+module appServiceSettings './modules/apiAppServiceSettings.bicep' = {
+  name: 'appServiceSettings'
+  params: {
+    appServcieName: appServcie.outputs.name
+    keyVaultName: keyVault.outputs.keyVaultName
+    ASPNETCORE_ENVIRONMENT: ASPNETCORE_ENVIRONMENT
   }
 }
 

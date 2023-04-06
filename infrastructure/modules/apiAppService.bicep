@@ -25,3 +25,4 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
 }
 
 output objectId string = appServiceApp.identity.principalId
+output name string = appServiceApp.name
