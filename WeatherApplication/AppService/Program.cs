@@ -8,6 +8,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddTransient<IClock, Clock>();
 builder.Services.AddScoped<IWeatherDataRepository, WeatherDataRepository>();
+builder.Services.AddScoped<ICityRepository, CityRepository>();
 
 var app = builder.Build();
 
