@@ -14,8 +14,14 @@
 
     const layout = {
         title: `Temperature in ${cityName}`,
-        xaxis_title: 'Time',
-        yaxis_title: 'Temperature in °C'
+        xaxis: {
+            title: 'Time'
+        },
+        yaxis: {
+            title: 'Temperature in °C'
+        }
+        //xaxis_title: 'Time',
+        //yaxis_title: 'Temperature in °C'
     };
 
     Plotly.newPlot('diagram', data, layout);

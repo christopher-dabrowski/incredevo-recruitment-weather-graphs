@@ -16,8 +16,12 @@
 
     const layout = {
         title: `Wind spped in ${cityName}`,
-        xaxis_title: 'Time',
-        yaxis_title: 'Wind in m/s'
+        xaxis: {
+            title: 'Time'
+        },
+        yaxis: {
+            title: 'Wind in m/s'
+        }
     };
 
     Plotly.newPlot('diagram', data, layout);
