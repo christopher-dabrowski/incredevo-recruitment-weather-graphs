@@ -21,7 +21,7 @@ param hostingPlanName string = '${baseName}-asp'
 param functionAppName string = '${baseName}-func'
 param keyVaultName string = take('${baseName}-kv', 24)
 
-var functionWorkerRuntime = 'dotnet-isolated'
+var functionWorkerRuntime = 'dotnet'
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: storageAccountName
