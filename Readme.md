@@ -27,7 +27,6 @@ This is my attempt at solving the second recruitment task for the [IncreDevo com
     - [GitHub Action runs](#github-action-runs)
   - [Notes](#notes)
 
-
 ## Task description
 
 Must use:
@@ -69,9 +68,8 @@ The Bicep resource and module dependencies diagram looks as follows:
 ### Time tracking
 
 For time tracking I'm using [Clockify](https://clockify.me/) and I'm tracking time for each task using GitHub issues.  
-I'll add the final time report when I finish the task.
 
-Total time spent on project: 08:38:13
+Total time spent on the project: 08:38:13
 
 Time breakdown per task in completion order:  
 _format: \#{gh-issue} {name} - {time spent}_
