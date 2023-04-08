@@ -1,12 +1,32 @@
 # IncreDevo recruitment task - Weather Data Application
 
-This is my attempt at solving the second recruitment task for the [IncreDevo company](https://incredevo.com/)
-
 [![Deploy Azure infrastructure](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployInfrastructure.yml/badge.svg)](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployInfrastructure.yml)
 
 [![Deploy ASP App](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAppService.yml/badge.svg)](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAppService.yml)
 
 [![Deploy Funcion App](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAzureFuncion.yml/badge.svg)](https://github.com/christopher-dabrowski/incredevo-recruitment-weather-graphs/actions/workflows/deployAzureFuncion.yml)
+
+This is my attempt at solving the second recruitment task for the [IncreDevo company](https://incredevo.com/)
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Task description](#task-description)
+- [Solution](#solution)
+  - [Architecture](#architecture)
+    - [IoC](#ioc)
+  - [Time tracking](#time-tracking)
+  - [CI/CD](#cicd)
+  - [Solution showcase](#solution-showcase)
+    - [Application in action](#application-in-action)
+    - [Current wind and temperature graphs](#current-wind-and-temperature-graphs)
+    - [Temperature in the last hour diagram](#temperature-in-the-last-hour-diagram)
+    - [Wind in the last hour diagram](#wind-in-the-last-hour-diagram)
+    - [Azure resources](#azure-resources)
+    - [Storage account content](#storage-account-content)
+    - [GitHub Action runs](#github-action-runs)
+  - [Notes](#notes)
+
 
 ## Task description
 
