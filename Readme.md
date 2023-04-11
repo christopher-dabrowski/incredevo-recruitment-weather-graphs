@@ -80,7 +80,7 @@ _format: \#{gh-issue} {name} - {time spent}_
 - #4 IoC - 00:20:16
 - #5 CI/CD for IoC - 00:27:21
 - #6 Scaffold ASP project - 00:05:00
-- #13 CI/CD for Azure Funcion - 00:33:47
+- #13 CI/CD for Azure Function - 00:33:47
 - #10 Setup data fetching - 02:21:32
 - #12 Display weather trends graphs - 03:15:30
 - #15 Describe the solution - 00:40:55
